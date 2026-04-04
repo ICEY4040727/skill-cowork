@@ -1,0 +1,27 @@
+{
+  "skill_name": "pr-review",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "请 review 这个 PR：新增批量删除接口，权限校验从 controller 下放到 service，未新增集成测试。",
+      "expected_output": "输出可贴 GitHub 的 review，包含风险分级发现、证据、回归风险和最终决策。",
+      "files": [],
+      "expectations": [
+        "Review includes explicit decision: Approve/Comment/Request changes",
+        "Findings are severity-ranked with evidence",
+        "Missing test coverage is called out with actionable fix suggestions"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "帮我评审：这个 PR 仅修改文档和注释，没有改执行逻辑，是否可以 approve？",
+      "expected_output": "给出低风险审查结论，并说明在何种条件下仍需阻塞。",
+      "files": [],
+      "expectations": [
+        "Review applies doc-only low-risk rule",
+        "Decision rationale is clearly stated",
+        "Final output remains in paste-ready GitHub review markdown"
+      ]
+    }
+  ]
+}

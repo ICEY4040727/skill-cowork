@@ -1,0 +1,27 @@
+{
+  "skill_name": "pr-creator",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "帮我整理这个改动成 PR 描述：重构登录流程，拆分认证中间件，修复 token 过期时未重定向的问题，并补了 3 个单测。",
+      "expected_output": "给出可直接贴 GitHub 的 PR markdown，包含变更概述、改动清单、自查、Reviewer 关注点和关联 issue。",
+      "files": [],
+      "expectations": [
+        "PR body includes Overview, Change List, Self-Check, Reviewer Focus, Linked Issues",
+        "Risky areas are highlighted for reviewer attention",
+        "Output is merge-review ready and non-ambiguous"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "这次改动涉及查询接口分页优化和索引调整，怎么写一个更容易过审的 PR？",
+      "expected_output": "输出结构化 PR 正文，明确性能影响、兼容性风险和测试证据。",
+      "files": [],
+      "expectations": [
+        "Performance and compatibility impacts are explicitly stated",
+        "Testing evidence is present",
+        "Needs-review workflow is reflected"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "skill_name": "issue-creation",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "根据这段讨论创建一个 issue：支付页偶发报错 500，用户刷新后恢复，近 24 小时出现 17 次，疑似和缓存键冲突有关。",
+      "expected_output": "生成可直接粘贴的 Issue Markdown，包含背景、可验证验收标准、优先级和 labels 建议。",
+      "files": [],
+      "expectations": [
+        "Issue includes a clear title and problem background",
+        "Acceptance criteria are checklist-style and testable",
+        "Priority and label suggestions are present"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "把这次需求拆成 issue：新增导出 CSV 能力，支持按时间范围筛选，导出耗时需低于 10 秒。",
+      "expected_output": "输出结构化 issue，并明确技术范围、风险点和验收标准。",
+      "files": [],
+      "expectations": [
+        "Issue scopes feature objective and module impact",
+        "Acceptance criteria include performance target",
+        "Output is ready to paste into GitHub Issue body"
+      ]
+    }
+  ]
+}

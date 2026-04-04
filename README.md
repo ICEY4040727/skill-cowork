@@ -13,12 +13,9 @@ A collaborative skill suite for GitHub issue creation, PR creation, and PR revie
 ```text
 skill-cowork/
   CONTRIBUTING.md
+  RELEASE_NOTES.md
   pr-review-workspace/
     README.md
-  research/
-    pr-review-example-ablation/
-      README.md
-      experiments/
   scripts/
     prepare_release.sh
   issue-creation/
@@ -53,7 +50,6 @@ Each skill ships with starter eval prompts in `evals/evals.json`.
 You can extend them with project-specific files and expectations.
 
 Runtime evaluation artifacts should be stored in `pr-review-workspace/`.
-Skill-authoring methodology experiments are stored in `research/pr-review-example-ablation/`.
 
 ## Release Cleanup
 
@@ -72,3 +68,7 @@ bash scripts/prepare_release.sh
 ## Release Status
 
 Current status: Beta (internally validated, recommended for team use before broad external distribution).
+
+## Release Notes
+
+See `RELEASE_NOTES.md` for versioned changelogs.

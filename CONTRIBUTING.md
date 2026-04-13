@@ -2,7 +2,7 @@
 
 ## 快速原则（10 行版）
 
-1. Owner 负责最终裁决与合并。
+1. Owner 负责最终裁决，同意后reviewer合并。
 2. Creator 负责实现代码并创建 PR。
 3. Reviewer 负责审查与技术风险识别，不直接写实现代码。
 4. 所有改动必须走 Issue -> PR 流程，不得直推 main。
@@ -12,6 +12,8 @@
 8. Creator 修复后必须在 PR comments 逐项回复。
 9. Reviewer 给出 `approve/comment/request changes`，Owner 做最终决定。
 10. 通过 tmux 通知减少等待，但不要打断对方正在输出。
+11. PR 可合并时，Reviewer 必须先询问 Owner 是否同意 merge；Owner 明确同意后再执行 merge。
+12. 禁止只写 `Related to #N` 作为关联方式；该写法不会自动闭合 issue。
 
 ## 角色分工
 
@@ -53,6 +55,8 @@ Issue 创建 -> Owner 标记 approved
 - 分支：`feat/#N-描述`、`fix/#N-描述`、`docs/描述`、`refactor/描述`
 - Commit：Conventional Commits（`feat:`, `fix:`, `docs:`, `refactor:`, `test:`）
 - PR 要求：单一职责、尽量 300 行内、必须关联 Issue
+- **Issue 关联必须使用自动闭合关键字**：`Closes #N` / `Fixes #N` / `Resolves #N`
+- **禁止使用** `Related to #N`（不会自动关闭 issue）
 - PR 描述最少包含：变更概述、改动清单、自查清单、Reviewer 关注点
 
 ## 标签规范
@@ -61,6 +65,52 @@ Issue 创建 -> Owner 标记 approved
 - `approved`：仅 Owner 最终确认后添加
 - 任务类标签：`feature` / `bugfix` / `research`
 - 优先级标签：`P0` / `P1` / `P2`
+
+## PR 自动关闭 Issue 的正确写法
+
+### ✅ 正确示例（会自动关闭 issue）
+
+```markdown
+Closes #123
+Fixes #123
+Resolves #123
+```
+
+### ❌ 错误示例（不会自动关闭 issue）
+
+```markdown
+Related to #123
+For #123
+Refs #123
+See #123
+```
+
+### 多个 issue
+
+```markdown
+Closes #123, #124, #125
+```
+
+### PR 模板（建议）
+
+```markdown
+## 变更概述
+[一句话描述这次改动]
+
+## 改动清单
+- file.ts: 修改了 XXX
+- file.py: 添加了 YYY
+
+## 自查清单
+- [ ] 本地测试通过
+- [ ] 代码符合 lint 规范
+- [ ] 更新了相关文档
+
+Closes #123
+```
+
+## 初次建立工作流
+
 
 ## 详细文档
 

@@ -24,7 +24,7 @@ description: Create clean, review-ready pull requests with clear scope, linked i
 2. 改动清单（模块与关键文件）
 3. 自查清单（测试、回归、兼容性）
 4. Reviewer 关注点（高风险区域）
-5. Issue 关联（如 `Closes #N`）
+5. 自动关闭关联Issue （必须用 `Closes #N`）
 
 模板见 `references/prTemplate.md`。
 
@@ -66,6 +66,11 @@ description: Create clean, review-ready pull requests with clear scope, linked i
 - Reviewer Focus
 - Linked Issues
 
+Linked Issues 强制规则：
+
+- 必须使用 `Closes #N` / `Fixes #N` / `Resolves #N` 任一自动闭合关键字。
+- 不得只写 `Related to #N`，否则 issue 不会在 merge 后自动关闭。
+
 ### Step 4. 设置协作标签
 
 建议规则见 `references/labelPolicy.md`：
@@ -90,5 +95,6 @@ tmux send-keys -t SelfLearn-reviewer "[Creator 通知] PR #<N> 已创建并标�
 - PR 描述是否可直接粘贴使用。
 - 是否包含测试与风险信息。
 - 是否正确关联 Issue。
+- 是否使用自动闭合关键字（`Closes/Fixes/Resolves #N`），而非仅 `Related to #N`。
 - 是否已设置 `needs-review`。
 - 对于高风险变更，是否已完成“方案 issue -> Reviewer 审视 -> Owner 确认”。

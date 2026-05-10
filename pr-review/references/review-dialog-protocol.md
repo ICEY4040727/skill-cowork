@@ -34,3 +34,11 @@ Creator 提交 PR
 - 修复后必须在 PR comment 逐项回复。
 - 不得只推代码不回复。
 - 若不同意建议，必须写明理由。
+- PR 若声明关联 issue，必须使用 `Closes/Fixes/Resolves #N`；仅 `Related to #N` 不会自动闭合。
+
+## 合并与中断规则（新增）
+
+- 当 PR 满足可合并条件（非 Draft、必需检查通过、无阻塞问题）时，Reviewer 必须先向 Owner 询问是否同意 merge。
+- 仅在 Owner 明确同意后，Reviewer 才可执行 merge。
+- 若存在任一阻塞条件（例如 CI 失败、仍为 Draft、存在阻塞缺陷），Reviewer 必须中断合并并立即通知 Owner。
+- 中断通知应包含：阻塞项清单、证据链接（如 workflow/job URL）、建议下一步。

@@ -31,7 +31,8 @@ Closes #N
 - Change List 至少 2 条，且包含具体模块或文件。
 - Self-Check 必须全部可核对，不能空置。
 - Reviewer Focus 至少 1 条。
-- Linked Issues 必须填写真实 issue（`Closes #N`），不得留空。
+- Linked Issues 必须填写真实 issue（`Closes #N` / `Fixes #N` / `Resolves #N`），不得留空。
+- 禁止只写 `Related to #N`，该写法不会自动闭合 issue。
 
 ## 高风险变更附加要求
 

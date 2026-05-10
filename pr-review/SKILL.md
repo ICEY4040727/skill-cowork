@@ -27,7 +27,7 @@ description: Review pull requests with risk-based checks, skill-assisted testing
 1. 结论：`Approve` / `Comment` / `Request changes`。
 2. 发现项：按严重级别归类（Critical/High/Medium/Low）。
 3. 证据：每条问题附文件路径、关键代码位置或复现条件。
-4. 建议：给出可执行修复方向，而不是只指出问题。
+4. 建议：给出可执行修复方向，而不是只指出问题。（坚持意见而非仅仅“建议却不监督执行”）
 5. 回归风险：列出可能受影响模块。
 6. 测试证据：说明调用了哪些相关 skill/测试、结果如何、结论置信度。
 
@@ -145,10 +145,19 @@ echo "[Reviewer 通知] PR #45 审查完成，需修改后再提审。" >> /tmp/
 - Reviewer 必须先询问 Owner 是否同意 merge。
 - 仅在 Owner 明确同意后，Reviewer 才执行 merge。
 
+### Step 7. 后续任务完成规则
+
+**关键原则**：必须完成所有 PR 中列出的后续任务后才能合并，不能先合并再完成任务。
+
+- 如果 PR 的 review comment 中列出了后续任务（如更新文档截图、更新 Release Notes 等），Reviewer 应将这些任务标记为 "PR 合并前的阻塞项"
+- 在 Creator 完成所有任务并更新 PR 后，Reviewer 再进行最终确认
+- Reviewer 不得在任务未完成的情况下批准合并
+- 只有当所有任务完成后，Reviewer 才会发布最终 Approve 结论
+
 ## Quality Checklist
 
 提交审查意见前确认：
-
+- 是否坚持意见而非仅仅“建议却不监督执行”。
 - 是否优先报告了会阻塞上线的问题。
 - 每条发现是否有证据和影响描述。
 - 修复建议是否可执行。
